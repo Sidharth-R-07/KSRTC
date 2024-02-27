@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
   
-    '13.236.6.136'
+    '13.54.101.0'
 ]
 
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'getapp'
+  
 ]
 
 MIDDLEWARE = [
@@ -86,7 +86,7 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'DEFAULT PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
 
