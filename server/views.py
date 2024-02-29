@@ -1,16 +1,6 @@
 import requests
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
-import logging
-import os
-from dotenv import load_dotenv
 
-from tenacity import retry, stop_after_attempt, wait_exponential
-
-# Configure a proper logging setup using a library like logging
-logger = logging.getLogger(__name__)
-# Load environment variables from .env file
-load_dotenv() 
 
 @api_view(['GET'])
 def get_bus_details(request):
@@ -28,5 +18,4 @@ def get_bus_details(request):
         print('Response Text:', response.text)
         print('Response JSON:', response.request)
     except Exception as e: 
-        print("*******************An error occurred: {e}*************************") 
-        return Response({'error': 'An error occurred'}, status=500)
+        print("*******************An error occurred: {e}*************************")
