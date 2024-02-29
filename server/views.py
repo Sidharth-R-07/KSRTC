@@ -3,14 +3,19 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import logging
 import os
+from dotenv import load_dotenv
+
+
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 # Configure a proper logging setup using a library like logging
 logger = logging.getLogger(__name__)
+# Load environment variables from .env file
+load_dotenv() 
 
 @api_view(['GET'])
 def get_bus_details(request):
-    logger.info("Received request for GTFS realtime data")
+    logger.info("***********************Received request for GTFS realtime data*************************")
     """
     Fetches GTFS realtime bus data from the external API and returns it as a response.
 
@@ -31,7 +36,7 @@ def get_bus_details(request):
         return Response({'error': 'Authentication failed'}, status=401)
 
     headers = {
-        'externalauth': 'RWLXTEgMcmuMj1mehBWi3ROaAfTmQwXjGksxvxD9'
+        'externalauth': externalauth
     }
 
     @retry(
