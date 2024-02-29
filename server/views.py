@@ -24,7 +24,7 @@ def get_bus_details(request):
         Response object containing GTFS realtime data (on success) or an error message (on failure).
     """
 
-    url_gtfs_realtime = 'https://external.chalo.com/dashboard/gtfs/realtime/thiruvananthapuram/ksrtc/bus'
+    url_gtfs_realtime = 'http://external.chalo.com/dashboard/enterprise/v1/vehicle/sessionData/thiruvananthapuram/ksrtc?vehicleId=KS3132'
     print("***********************Received request for GTFS realtime data*************************")
 
     # Read authentication token from a secure source (e.g., environment variable)
