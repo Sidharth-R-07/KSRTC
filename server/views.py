@@ -27,9 +27,6 @@ def get_bus_details(request):
         print('Response Headers:', response.headers)
         print('Response Text:', response.text)
         print('Response JSON:', response.request)
-    
-
-    
     except Exception as e: 
         print("*******************An error occurred: {e}*************************") 
         return Response({'error': 'An error occurred'}, status=500)
