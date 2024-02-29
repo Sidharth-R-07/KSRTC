@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
   
-    '13.54.101.0'
+    # '13.54.101.0'
 ]
 
 
@@ -87,7 +87,7 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     # 'DEFAULT PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    # 'PAGE_SIZE': 10
 }
 
 # Password validation
