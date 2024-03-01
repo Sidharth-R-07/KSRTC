@@ -13,11 +13,10 @@ def get_bus_details(request):
         response = requests.get(url_gtfs_realtime, headers=headers)
         response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
         data = response.json()
-        print(f'Data:', data)
-        # Process data as needed
-        return JsonResponse(data)  # Return the fetched data as a JSON response
+        print('DATA ::------------------- {data}')
+        return JsonResponse(data)
     except Exception as e:
         # Log the error
-        print(f"An error occurred: {e}")
+        print('ERROR :::    {e}')
         # Return an appropriate error response
         return JsonResponse({'error': 'An error occurred while fetching bus details'}, status=500)
