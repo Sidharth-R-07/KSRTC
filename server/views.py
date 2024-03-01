@@ -8,10 +8,9 @@ def get_bus_details(request):
     headers = {
         'externalauth': 'RWLXTEgMcmuMj1mehBWi3ROaAfTmQwXjGksxvxD9'
     }
-    
     try:
         print("GET DATA CALLED-------------------")
-        response = requests.get(url_gtfs_realtime, headers=headers)
+        response = requests.get(url_gtfs_realtime, headers=headers, timeout=10)
         response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
         data = response.json()
         print('DATA ::------------------- {data}')
