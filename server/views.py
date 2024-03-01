@@ -10,6 +10,7 @@ def get_bus_details(request):
     }
     
     try:
+        print("GET DATA CALLED-------------------")
         response = requests.get(url_gtfs_realtime, headers=headers)
         response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
         data = response.json()
