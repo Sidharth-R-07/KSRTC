@@ -4,14 +4,14 @@ import requests
 
 @api_view(['GET'])
 def get_bus_details(request):
-    url_gtfs_realtime = 'http://external.chalo.com/dashboard/enterprise/v1/vehicle/sessionData/thiruvananthapuram/ksrtc?vehicleId=KS3132'
+    url_gtfs_realtime = 'https://external.chalo.com/dashboard/gtfs/realtime/thiruvananthapuram/ksrtc/bus'
     headers = {
         'externalauth': 'RWLXTEgMcmuMj1mehBWi3ROaAfTmQwXjGksxvxD9'
     }
     try:
         print("GET DATA CALLED-------------------")
         response = requests.get(url_gtfs_realtime, headers=headers, timeout=10)
-        response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+        print('RESPONSE ::------------------- ',response.status_code)
         data = response.json()
         print('DATA ::------------------- {data}')
         return JsonResponse(data)
