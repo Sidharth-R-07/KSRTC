@@ -12,9 +12,8 @@ def get_bus_details(request):
         print("GET DATA CALLED-------------------")
         response = requests.get(url_gtfs_realtime, headers=headers, timeout=10)
         print('RESPONSE ::------------------- ',response.status_code)
-        data = response.json()
-        print('DATA ::------------------- {data}')
-        return JsonResponse(data)
+        print('DATA ::',response._content)
+        return JsonResponse(response._content)
     except Exception as e:
         # Log the error
         print('ERROR :::    {e}')
